@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    transition: background 0.3s;
+    position: relative;
+}
+
+.neon-title {
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+    0% { text-shadow: 0 0 5px #0ff,0 0 10px #0ff,0 0 20px #0ff; }
+    50% { text-shadow: 0 0 15px #0ff,0 0 30px #0ff,0 0 60px #0ff; }
+    100% { text-shadow: 0 0 5px #0ff,0 0 10px #0ff,0 0 20px #0ff; }
+}
+
+#menu { margin-top: 80px; }
+
+.menu-btn {
+    padding: 15px 35px;
+    margin: 10px;
+    border: none;
+    border-radius: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff;
+    transition: 0.2s;
+}
+.menu-btn:hover {
+    transform: scale(1.15) rotate(-2deg);
+    box-shadow: 0 0 35px #0ff, 0 0 60px #0ff inset;
+}
+
+.hidden { display: none; }
+
+#top-bar {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 24px;
+}
+
+#circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    background: #ff005e;
+    box-shadow: 0 0 25px #ff005e, 0 0 50px #ff005e;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s, box-shadow 0.2s;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: explode 0.5s linear forwards;
+}
+@keyframes explode { from {opacity:1; transform:scale(1);} to {opacity:0; transform:scale(3);} }
+
+.trail {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(0,255,255,0.4);
+    box-shadow: 0 0 20px #0ff;
+    pointer-events: none;
+    animation: fade 0.4s linear forwards;
+}
+@keyframes fade { to {opacity:0; transform:scale(1.5);} }
+
+#gameover-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    transition: opacity 0.5s;
+}
+#gameover-overlay.hidden { display: none; }
+
+#gameover-box {
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px #0ff;
+    animation: fadeIn 0.7s ease forwards;
+}
+#gameover-box h1 { font-size: 50px; margin-bottom: 20px; }
+#gameover-box h2 { font-size: 30px; margin-bottom: 15px; }
+#gameover-box h3 { font-size: 20px; margin-bottom: 20px; }
+
+#gameover-box button {
+    font-size: 22px;
+    background: #0ff;
+    border: none;
+    padding: 15px 30px;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 0 20px #0ff;
+}
+#gameover-box button:hover { transform: scale(1.15); }
+
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeOut { from {opacity:1;} to {opacity:0;} }
+
+@keyframes shake {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(5px, -5px); }
+    50% { transform: translate(-5px, 5px); }
+    75% { transform: translate(5px, 5px); }
+    100% { transform: translate(0,0); }
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #0ff;
+    opacity: 0.5;
+    border-radius: 50%;
+    animation: moveStar linear infinite;
+}
+@keyframes moveStar { from { transform: translateY(0); } to { transform: translateY(-1000px); } }
