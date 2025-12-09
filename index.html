@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Glow Strike ULTIMATE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MENU PRINCIPAL -->
+<div id="menu">
+    <h1 class="neon-title">⚡ Glow Strike ⚡</h1>
+    <p>Choisis un mode :</p>
+    <button class="menu-btn" onclick="startGame('classique')">Classique 60s</button>
+    <button class="menu-btn" onclick="startGame('hardcore')">Hardcore</button>
+    <button class="menu-btn" onclick="startGame('infini')">Infini ♾️</button>
+    <div id="leaderboard">
+        <p id="best-score">Meilleur Score : 0</p>
+        <p id="best-combo">Meilleur Combo : x0</p>
+    </div>
+</div>
+
+<!-- ZONE DE JEU -->
+<div id="game" class="hidden">
+    <div id="top-bar">
+        <div id="score">Score : 0</div>
+        <div id="combo">Combo x1</div>
+        <div id="timer">60s</div>
+        <div id="lives">❤️❤️❤️</div>
+    </div>
+    <div id="game-area">
+        <div id="circle"></div>
+    </div>
+</div>
+
+<!-- GAME OVER OVERLAY -->
+<div id="gameover-overlay" class="hidden">
+    <div id="gameover-box">
+        <h1>GAME OVER 💀</h1>
+        <h2 id="final-score">Ton score : 0</h2>
+        <h3>Merci d’avoir joué à Glow Strike !</h3>
+        <button id="restart">Rejouer</button>
+        <button id="create-gif">Créer un mini GIF 🎬</button>
+    </div>
+</div>
+
+<!-- Librairies pour GIF et capture -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gif.js@0.2.0/dist/gif.js"></script>
+
+<!-- Script principal du jeu -->
+<script src="game.js"></script>
+</body>
+  </html>
