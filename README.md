@@ -27,13 +27,13 @@
    - **Infini ♾️** : Jeu sans limite de temps  
 3. Clique sur le cercle néon pour gagner des points  
 4. Chaque clic augmente le combo et active des effets visuels  
-5. À la fin du temps (ou en mode Infini), le Game Over overlay apparaît avec le score final  
+5. Game Over overlay apparaît à la fin  
 6. Tu peux **rejouer** ou **créer un GIF** de ta partie  
 
 ---
 
 ## ⚡ Installation
 
-1. Clone le dépôt :  
+1. Clone le dépôt depuis GitHub (remplace `ton-utilisateur` et `glow-strike` par ton vrai compte et nom du repo) :  
 ```bash
-git clone https://github.com/ton-utilisateur/glow-strike.git# Glow-in-strike-
+git clone https://github.com/at4207198-cmd/glow-strike.git
